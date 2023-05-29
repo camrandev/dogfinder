@@ -19,15 +19,14 @@ function App() {
   }
 
   function getDogNames(dogs) {
-    return dogs.map(d => d.name)
+    return dogs.map((d) => d.name);
   }
 
   return (
     <div className="App">
       <BrowserRouter>
-        <Nav dogNames={getDogNames(dogs)}/>
-        <RoutesList dogs={dogs}/>
-      
+        <Nav dogNames={getDogNames(dogs)} />
+        <RoutesList dogs={dogs} />
       </BrowserRouter>
     </div>
   );
