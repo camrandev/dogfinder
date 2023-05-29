@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+// import React, { useState, useEffect } from 'react';
+import { NavLink } from "react-router-dom";
 
  /** DESCRIPTION
 *
@@ -9,12 +10,17 @@ import React, { useState, useEffect } from 'react';
 * PARENT -> Nav -> {CHILDREN}
 */
 
-function Nav ({dogNames}) {
+function Nav ({ dogNames }) {
+
+  console.log(dogNames);
+
 
   return (
-    <div>
-      <h3>Nav</h3>
-    </div>
+    <nav>
+      <ul>
+        {dogNames.map((name, index) => <NavLink key={index} to={`/${name}`} >{name}</NavLink> )}
+      </ul>
+    </nav>
   )
 }
 

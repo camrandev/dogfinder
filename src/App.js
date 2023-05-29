@@ -1,5 +1,8 @@
 import "./App.css";
 import React, { useState } from "react";
+import { BrowserRouter } from "react-router-dom";
+import Nav from "./Nav";
+import RoutesList from "./RoutesList";
 
 function App() {
   const [dogs, setDogs] = useState(null);
@@ -15,11 +18,17 @@ function App() {
     return <h1>Loading....</h1>;
   }
 
+  function getDogNames(dogs) {
+    return dogs.map(d => d.name)
+  }
+
   return (
     <div className="App">
-      <h1>hi</h1>
-      {/* <Nav/>
-      <Routes/> */}
+      <BrowserRouter>
+        <Nav dogNames={getDogNames(dogs)}/>
+        <RoutesList dogs={dogs}/>
+      
+      </BrowserRouter>
     </div>
   );
 }
